@@ -41,21 +41,6 @@ nav ul {
   /* Use flexbox to layout the li elements horizontally */
 }
 
-body>nav>ul>li {
-  list-style: none;
-  color: #fff;
-  font-size: 1.3rem;
-  margin-right: 0.9rem;
-}
-
-body>nav>ul>li>a {
-  text-decoration: none;
-  color: #fff;
-}
-
-body>nav>ul>li>a:hover {
-  text-decoration: underline;
-}
 /* Now it's time for the navigation links */
 /* Create a CSS block that targets all of the <li> elements that are children of the <nav> element */
 /* Use the following properties inside the block. */
@@ -66,11 +51,27 @@ body>nav>ul>li>a:hover {
   - margin-right
 */
 
+body>nav>ul>li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.3rem;
+  margin-right: 0.9rem;
+}
+
 /* Create a block that targets all of the <a> elements that are children of <li> elements in the <nav>  */
 /* Give them a color of #fff and text-decoration of none */
 
+body>nav>ul>li>a {
+  text-decoration: none;
+  color: #fff;
+}
+
 /* Create another block that targets all of the <a> elements that are children of <li> elements in the <nav>  */
 /* Use the :hover pseudo-class to add an underline on hover */
+
+body>nav>ul>li>a:hover {
+  text-decoration: underline;
+}
 
 /* Where to go section includes an <h3> element and a <form>  */
 /* Create a block that targets the where-togo class and give it a background color of #040E27 and suitable padding */
@@ -80,12 +81,13 @@ body>nav>ul>li>a:hover {
   padding: 5px 40px;
 }
 
+/* Create a block that targets the <h3> child of the where-togo class  */
+/* Use the font-size and color properties to style the <h3> element */
+
 .where-togo>h3 {
   color: #fff;
   font-size: 2rem;
 }
-/* Create a block that targets the <h3> child of the where-togo class  */
-/* Use the font-size and color properties to style the <h3> element */
 
 /* The search form has a class of search-form. We want the input fields to  */
 /* display horizontally. The easiest way to make a group of elements horizontal is to use flexbox */
@@ -95,23 +97,12 @@ body>nav>ul>li>a:hover {
   display: flex;
 }
 
-.input-field>input, .input-field>.nice-select{
-  width: 13rem;
-  height: 3rem;
-  margin-left: 1rem;
-}
-
-.input-field>.search-btn {
-  background-color: rgb(242, 79, 79);
-  color: white;
-  border-radius: 10px;
-  width: 5rem;
-  height: 3rem;
-  margin-left: 2rem;
-}
-
 /* Notice that each form input is wrapped in a div */
 /* Create a block that targets the input-field class and apply a suitable width and margin */
+.input-field {
+  width: 13rem;
+  height: 3rem;
+}
 
 /* Styling the elements of Forms is difficult. */
 /* Hint: https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling */
@@ -119,9 +110,14 @@ body>nav>ul>li>a:hover {
 input {
   /* Style the form input elements using width, height, padding-left and border-radius */
   border-radius: 5px;
+  width: 10rem;
+  height: 2rem;
 }
 
 .nice-select {
+  border-radius: 5px;
+  width: 10rem;
+  height: 2rem;
   /* Select elements are not imput elements! Therefore we've given the <select> element it's own class  */
   /* They are notoriously difficult to style with css */
   /* In this case you can use width, height, font-size, color, border and border-radius */
@@ -140,17 +136,26 @@ input {
   - border-radius
   - cursor
   */
+  background: rgb(241, 85, 85);
+  color: white;
+  font-size: 1rem;
+  height: 2rem;
+  width: 5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: grab;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 3 auto;
-  grid-template-rows: 2 auto;
+  justify-content: center;
   /* The destinations are enclosed in an article element that we want to make a grid */
   /* Set the display property to 'grid' and justify the content */
 }
 
 .row {
+  /* margin: 0rem 3rem; */
+  grid-template-columns: 1fr 1fr 1fr;
   /* The row of the grid has 3 columns which should be the same width and roughly a third of the available space */
   /* Use the grid-template-columns property to set each column to 30% */
   /* You can experiment with different units for the width values */
@@ -158,11 +163,15 @@ input {
 }
 
 .section-title {
+  display: flex;
+  justify-content: center;
   /* The <div> with class section-title contains an <h3> child which we want to center */
   /* The easiest way to center child elements is to set the display property to 'flex' and justify the content */
 }
 
 .single-destination {
+  margin: 1rem;
+  overflow: hidden;
   /* Use the margin property to make some space between the destinations */
   /* Set the overflow to 'hidden' */
   /* The overflow CSS shorthand property sets the desired behaviour for an element's overflow 
@@ -170,28 +179,51 @@ input {
 }
 
 img {
+  max-width: 100%;
   /* Set the max-width property to 100% */
 }
 
 /* Let's take the training wheels off. Finish off the page by adding styles to the remaining blocks */
 
 .testimonial-area {
+  padding: 5rem;
+  background: rgb(99, 99, 111);
+  display: flex;
+  justify-content: space-evenly;
   /* Write your code here */
 }
 
 .single-testmonial{
+  margin: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: grid;
+  justify-content: center;
+  height: 20rem;
   /* Write your code here */
 }
 
+.author-thumb {
+  display: grid;
+  justify-content: center;
+}
+
 .footer {
+  padding: 2rem;
+  background-color: #040E27;
+  color: #fff;
   /* Write your code here */
 }
 
 .footer-widget p {
+  color: rgb(121, 117, 117);
+  line-height: 1.5rem;
   /* Write your code here */
 }
 
 .footer-widget a:hover {
+  text-decoration: underline;
    /* Write your code here */
 }
 
@@ -200,6 +232,9 @@ img {
 }
 
 .footer-widget a {
+  text-decoration: none;
+  color: rgb(121, 117, 117);
+  line-height: 1.5rem;
    /* Write your code here */
 }
 
