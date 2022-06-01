@@ -241,7 +241,8 @@ img {
 /* Media Queries */
 
 @media (max-width: 720px) {
-    /* Add some responsive code here */
-    /* Make the destinations stack on top of each other */
-    /* Make the form input stack on top of each other */
+  .row {
+    grid-auto-flow: row;
+    grid-template-columns: 50%;
+  }
 }
